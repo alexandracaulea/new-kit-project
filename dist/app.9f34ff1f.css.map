@@ -1,1 +1,0 @@
-{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA,iBAGE,qBACF,CAEA,KACE,QAAS,CACT,6BACF","file":"app.9f34ff1f.css","sourceRoot":"..\\public","sourcesContent":["*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-family: \"Roboto\", sans-serif;\r\n}\r\n"]}
