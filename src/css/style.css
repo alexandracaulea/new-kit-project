@@ -21,6 +21,7 @@
 
   --background: var(--white-20);
   --textColor: var(--black);
+  --headerBackground: var(--grey-80);
 
   /* Type */
   --headingFont: 'Ovo', serif;
@@ -33,8 +34,17 @@
   --h5: 1.25rem;
   --smallText: 0.8rem;
 
-  /* Postioning */
+  /* Positioning */
   --containerPadding: 2.5%;
+  --headerHeight: 3.5rem;
+
+  /* Elevation */
+  --level-1: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --level-2: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-3: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-4: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 html {
@@ -97,8 +107,50 @@ small,
   font-size: var(--smallText);
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--containerPadding);
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: var(--headerHeight);
+  width: 100%;
+  background-color: var(--headerBackground);
+  color: #fff;
+  box-shadow: var(--level-3);
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item + .nav__item {
+  margin-left: 10px;
+}
+
+.nav__link {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  box-shadow: 0 2px #fff;
+}
+
 .layout {
-  padding: var(--containerPadding);
+  padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
   max-width: 1280px;
   margin: 0 auto;
 }
