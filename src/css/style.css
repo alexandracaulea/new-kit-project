@@ -1,24 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&family=Ovo&display=swap');
 
 :root {
+  /* Colors */
+  --purple: #540045;
+  --pink: #c60052;
+  --orange: #ff714b;
+  --yellow: #eaff87;
+  --green: #acffe9;
+  --black: #0e1824;
+  --darkGrey: #222;
+  --grey: #9e9e9e;
+  --grey-20: #757575;
+  --grey-40: #616161;
+  --grey-60: #424242;
+  --grey-80: #212121;
+  --white: #fff;
+  --white-20: #fafafa;
+  --white-40: #f5f5f5;
+  --white-40: #eee;
+
+  --background: var(--white-20);
+  --textColor: var(--black);
+
+  /* Type */
   --headingFont: 'Ovo', serif;
   --bodyFont: 'Mulish', sans-serif;
+  --baseFontSize: 100%;
   --h1: 3.052rem;
   --h2: 2.441rem;
   --h3: 1.953rem;
   --h4: 1.563rem;
   --h5: 1.25rem;
   --smallText: 0.8rem;
+
+  /* Postioning */
+  --containerPadding: 2.5%;
 }
 
 html {
-  font-size: 112.5%;
+  font-size: var(--baseFontSize);
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--bodyFont);
   font-weight: 400;
   line-height: 1.75;
+  background-color: var(--background);
+  color: var(--black);
 }
 
 p {
@@ -60,4 +95,14 @@ h5 {
 small,
 .text_small {
   font-size: var(--smallText);
+}
+
+.layout {
+  padding: var(--containerPadding);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.layout-fluid {
+  width: 100%;
 }
