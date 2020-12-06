@@ -2,11 +2,13 @@
 
 :root {
   /* Colors */
-  --purple: #540045;
-  --pink: #c60052;
-  --orange: #ff714b;
-  --yellow: #eaff87;
-  --green: #acffe9;
+  --red: #e84855;
+  --yellow: #f9dc5c;
+  --blue: #3185fc;
+  --pink: #efbcd5;
+  --darkBlue: #403f4c;
+  --hotPink: #f54291;
+
   --black: #0e1824;
   --darkGrey: #222;
   --grey: #9e9e9e;
@@ -17,11 +19,13 @@
   --white: #fff;
   --white-20: #fafafa;
   --white-40: #f5f5f5;
-  --white-40: #eee;
+  --white-60: #eee;
 
   --background: var(--white-20);
   --textColor: var(--black);
   --headerBackground: var(--grey-80);
+
+  --primary: var(--blue);
 
   /* Type */
   --headingFont: 'Ovo', serif;
@@ -70,6 +74,18 @@ p {
   margin-bottom: 1rem;
 }
 
+p a {
+  color: var(--textColor);
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 var(--pink);
+  transition: all 0.35s ease-in-out;
+}
+
+p a:hover {
+  box-shadow: inset 0 -30px 0 var(--pink);
+  /* color: var(--white); */
+}
+
 h1,
 h2,
 h3,
@@ -107,10 +123,21 @@ small,
   font-size: var(--smallText);
 }
 
-ul {
+.nav__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .header {
@@ -131,6 +158,10 @@ ul {
 .header a {
   color: #fff;
   text-decoration: none;
+}
+
+.logo svg {
+  vertical-align: middle;
 }
 
 .nav__list {
@@ -157,4 +188,10 @@ ul {
 
 .layout-fluid {
   width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+  :root {
+    --baseFontSize: 112.5%;
+  }
 }
