@@ -24,6 +24,8 @@
   --background: var(--white-20);
   --textColor: var(--black);
   --headerBackground: var(--grey-80);
+  --code: var(--red);
+  --exampleBg: var(--white);
 
   --primary: var(--blue);
 
@@ -36,6 +38,7 @@
   --h3: 1.953rem;
   --h4: 1.563rem;
   --h5: 1.25rem;
+  --h6: 1.05rem;
   --smallText: 0.8rem;
 
   /* Positioning */
@@ -54,12 +57,18 @@
 html {
   font-size: var(--baseFontSize);
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:hover > .anchor-link,
+.anchor-link:focus {
+  opacity: 0.7;
 }
 
 body {
@@ -74,9 +83,12 @@ p {
   margin-bottom: 1rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 p a {
   color: var(--textColor);
-  text-decoration: none;
   box-shadow: inset 0 -2px 0 var(--pink);
   transition: all 0.35s ease-in-out;
 }
@@ -90,37 +102,65 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   margin: 3rem 0 1.38rem;
   font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1.3;
 }
 
-h1 {
+h1,
+.h1 {
   margin-top: 0;
   font-size: var(--h1);
 }
 
-h2 {
+h2,
+.h2 {
   font-size: var(--h2);
 }
 
-h3 {
+h3,
+.h3 {
   font-size: var(--h3);
 }
 
-h4 {
+h4,
+.h4 {
   font-size: var(--h4);
 }
 
-h5 {
+h5,
+.h5 {
   font-size: var(--h5);
+}
+
+h6,
+.h6 {
+  font-size: var(--h6);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0;
 }
 
 small,
 .text_small {
   font-size: var(--smallText);
+}
+
+code {
+  color: var(--hotPink);
+}
+
+section > [id] {
+  scroll-margin-top: 3rem;
 }
 
 .nav__list {
@@ -186,12 +226,76 @@ small,
   margin: 0 auto;
 }
 
+.grid {
+  display: block;
+}
+
 .layout-fluid {
   width: 100%;
+}
+
+.grid-split {
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+}
+
+.cols-2 {
+  --gridCols: 2;
+}
+
+.cols-3 {
+  --gridCols: 3;
+}
+
+.cols-4 {
+  --gridCols: 4;
+}
+
+.cols-5 {
+  --gridCols: 5;
+}
+
+.cols-6 {
+  --gridCols: 6;
+}
+
+.cols-7 {
+  --gridCols: 7;
+}
+
+.cols-8 {
+  --gridCols: 8;
+}
+
+.cols-9 {
+  --gridCols: 9;
+}
+
+.cols-10 {
+  --gridCols: 10;
 }
 
 @media only screen and (min-width: 576px) {
   :root {
     --baseFontSize: 112.5%;
   }
+
+  .grid {
+    display: grid;
+  }
+}
+
+.example {
+  padding: 2em;
+  background-color: var(--exampleBg);
+  box-shadow: var(--level-3);
+}
+
+.anchor-link {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  color: var(--hotPink);
+}
+
+.anchor-link::after {
+  content: attr(data-anchor-icon);
 }
